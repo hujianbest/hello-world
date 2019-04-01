@@ -3,7 +3,9 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
 import org.bson.Document;
+import org.bson.conversions.Bson;
 
 /**
  * TODO
@@ -29,8 +31,24 @@ public class MongoUtil {
                 .append("age",18);
         collection.insertOne(document);
 
-        FindIterable findIterable = collection.find();
-        MongoCursor cursor = findIterable.iterator();
+        FindIterable<Document> findIterable = collection.find();
+        MongoCursor<Document> cursor = findIterable.iterator();
+        while(cursor.hasNext()){
+            System.out.println(cursor.next());
+        }
+        System.out.println();
+
+        Bson filter = Filters.eq("name","张三");
+        Document document1 = new Document("$set",new Document("age",100));
+        collection.updateOne(filter, document1);
+        cursor = findIterable.iterator();
+        while(cursor.hasNext()){
+            System.out.println(cursor.next());
+        }
+        System.out.println();
+
+        collection.deleteOne(filter);
+        cursor = findIterable.iterator();
         while(cursor.hasNext()){
             System.out.println(cursor.next());
         }
