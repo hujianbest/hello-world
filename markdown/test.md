@@ -38,7 +38,6 @@ ___
 ![](https://img.douyucdn.cn/data/yuba/default/2019/01/25/201901252156243595386333827.500x0.jpg.webp?i=41028904dfcbedc3acb76668fed2d14404 )
 
 ![](https://img.douyucdn.cn/data/yuba/default/2019/03/12/201903120020224291641883430.500x0.jpg.webp?i=396023966f7d28b8507c293a5e6fd12804)
-
 ![](https://img.douyucdn.cn/data/yuba/defhault/2019/03/04/201903040019362064003509.500x0.jpg.webp?i=41920bc4c804a1378f44cfff6580025604)
 
 ![](https://img.douyucdn.cn/data/yuba/default/2019/02/11/201902110011187274142547108.500x0.jpg.webp?i=3960fe0e8a4f89be8203935a0203b12804)
