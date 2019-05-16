@@ -49,18 +49,24 @@ public class Main extends JPanel {
     }
 
     public static void main(String[] args) {
+
         try {
             System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+        }catch (Exception e){
+            e.printStackTrace();
+            System.exit(1);
+        }
 
+        JFrame frame = new JFrame("Camera");
+        VideoCapture capture = new VideoCapture(0);//视频捕捉
+
+        try {
             Mat capImg = new Mat();//opencv 图像处理封装类
-            VideoCapture capture = new VideoCapture(0);//视频捕捉
             int height = (int) capture.get(Videoio.CAP_PROP_FRAME_HEIGHT);
             int width = (int) capture.get(Videoio.CAP_PROP_FRAME_WIDTH);
-            if (height == 0 || width == 0) {
+            if (! capture.isOpened()) {
                 throw new Exception("Camera not found!");
             }
-
-            JFrame frame = new JFrame("Camera");
             frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
             Main panel = new Main();
 
@@ -76,11 +82,11 @@ public class Main extends JPanel {
                 panel.mImg = panel.mat2BI(detectFace(capImg));
                 panel.repaint();
             }
-            capture.release();
-            frame.dispose();
         } catch (Exception e) {
             System.out.println("异常：" + e);
         } finally {
+            capture.release();
+            frame.dispose();
             System.out.println("--done--");
         }
 
