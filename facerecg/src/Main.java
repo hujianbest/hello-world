@@ -58,7 +58,10 @@ public class Main extends JPanel {
         }
 
         JFrame frame = new JFrame("Camera");
-        VideoCapture capture = new VideoCapture(0);//视频捕捉
+        VideoCapture capture = new VideoCapture(0);//参数为0时打开摄像头
+//        capture.set(3, 1080);//宽度
+//        capture.set(4, 960);//高度
+//        capture.set(5, 30);//帧率 帧/秒
 
         try {
             Mat capImg = new Mat();//opencv 图像处理封装类
@@ -74,11 +77,11 @@ public class Main extends JPanel {
             frame.setVisible(true);
             frame.setSize(width + frame.getInsets().left + frame.getInsets().right,
                     height + frame.getInsets().top + frame.getInsets().bottom);
-            Mat grayImg = new Mat();
+//            Mat grayImg = new Mat();
             while (frame.isShowing() ) {
                 capture.read(capImg);//输出到mat
-                Imgproc.cvtColor(capImg, grayImg, Imgproc.COLOR_RGB2GRAY);//彩色空间转换，grayImg为目标mat
-                //Imgcodecs.imwrite("G:/opencv/lw/neg/back"+n+".png", temp);
+//                Imgproc.cvtColor(capImg, grayImg, Imgproc.COLOR_RGB2GRAY);//彩色空间转换，grayImg为目标mat
+                //Imgcodecs.imwrite("G:/opencv/lw/neg/back"+n+".png", grayImg);
                 panel.mImg = panel.mat2BI(detectFace(capImg));
                 panel.repaint();
             }
