@@ -7,6 +7,11 @@ import com.mongodb.client.model.Filters;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 
+import org.eclipse.paho.client.mqttv3.IMqttMessageListener;
+import org.eclipse.paho.client.mqttv3.MqttClient;
+import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
+import org.eclipse.paho.client.mqttv3.MqttMessage;
+
 /**
  * TODO
  *
@@ -15,11 +20,27 @@ import org.bson.conversions.Bson;
  */
 public class MongoUtil {
 
-    public static MongoDatabase getConnect(){
-        MongoClient mongoClient = new MongoClient("localhost",27017);
-        MongoDatabase mongoDatabase = mongoClient.getDatabase("test");
+    public static MongoDatabase getConnect() {
+        MongoClient mongoClient = new MongoClient("localhost", 27017);
+        MongoDatabase mongoDatabase = mongoClient.getDatabase("mqtt");
         return mongoDatabase;
     }
+}
+
+class MqttReceiver implements IMqttMessageListener {
+    @Autowired
+    private RecordDao recordDao;
+
+    public void messageArrived(String topic, MqttMessage message) {
+        String content=message.getPayload().toString();
+        recordDao.saveRecord(topic, content);
+    }
+}
+
+
+
+
+
 
 
 

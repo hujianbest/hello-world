@@ -15,6 +15,13 @@ target/
 *.iml
 *.iws
 
+#eclipse
+.settings/
+.vscode/
+.classpath
+.project
+bin/
+
 #temp file
 *.log
 *.cache
