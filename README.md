@@ -1,5 +1,24 @@
+# 我的开发环境配置
+## 工具
++ 文件传输：FileZilla Client
++ 远程连接：Xshell 6
++ JavaIDE：IDEA
+
+## 偏好
+### IDEA
+Setting-->Editor
++ font: Consolas
++ size: 18
++ code style-->java: 不勾选Use tab
++ Editor-->File and Code Templates-->Includes-->Actionxxx:    
+``@Description TODO        
+@author bestJ       
+@since 1.0.0``   
+
+
+
+# Markdown基本语法
 [点击跳转至百度](http://www.baidu.com "title")
-# 一级标题
 ## 二级标题
 *斜体*  
 **加粗**  
