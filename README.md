@@ -6,6 +6,7 @@
 
 ## 偏好
 ### IDEA
+#### 配置
 Setting-->Editor
 + font: Consolas
 + size: 18
@@ -15,7 +16,13 @@ Setting-->Editor
 @author bestJ       
 @since 1.0.0``   
 
-
+#### 插件
++ [p3c：阿里巴巴出品的java代码规范插件](https://github.com/alibaba/p3c/tree/master/idea-plugin)
++ .ignore：生成各种ignore文件，一键创建git ignore文件的模板，免得自己去写
++ lombok：支持lombok的各种注解，从此不用写getter setter这些 可以把注解还原为原本的java代码 非常方便
++ FindBugs-IDEA：检测代码中可能的bug及不规范的位置，检测的模式相比p3c更多
++ Maven Helper：一键查看maven依赖，查看冲突的依赖，一键进行exclude依赖
++ VisualVM Launcher：运行java程序的时候启动visualvm，方便查看jvm的情况 比如堆内存大小的分配。某个对象占用了多大的内存，jvm调优必备工具
 
 # Markdown基本语法
 [点击跳转至百度](http://www.baidu.com "title")
