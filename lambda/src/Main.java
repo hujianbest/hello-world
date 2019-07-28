@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -37,7 +38,7 @@ public class Main {
         System.out.println();
 
         //collect
-        List<String> stringList = Stream.of("aaa", "bbb", "abc").collect(Collectors.toList());
+        List<String> stringList = Stream.of("aaa", "bbbb", "abcde").collect(Collectors.toList());
 
 
 
@@ -61,5 +62,14 @@ public class Main {
         //filter
         List<String> newBeginWithA = stringList.stream().filter(string -> string.startsWith("a")).collect(Collectors.toList());
         System.out.println(beginWithA.equals(newBeginWithA));
+
+        //min and max
+        String min = stringList.stream().min(Comparator.comparing(string -> string.length())).get();
+        System.out.println(min);
+
+        //reduce
+        String add = stringList.stream().reduce("",(acc, element) -> acc+element);
+        System.out.println(add);
+
     }
 }
