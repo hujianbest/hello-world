@@ -24,6 +24,23 @@ Setting-->Editor
 + Maven Helper：一键查看maven依赖，查看冲突的依赖，一键进行exclude依赖
 + VisualVM Launcher：运行java程序的时候启动visualvm，方便查看jvm的情况 比如堆内存大小的分配。某个对象占用了多大的内存，jvm调优必备工具
 
+### 博客
+https://github.com/xingshaocheng/architect-awesome/blob/master/README.md
+https://blog.csdn.net/whut2010hj
+https://jinnianshilongnian.iteye.com/
+http://ifeve.com/
+https://javadoop.com/
+http://calvin1978.blogcn.com/
+http://www.hollischuang.com/
+http://blog.720ui.com/
+http://cmsblogs.com/
+https://www.concretepage.com/
+https://www.programcreek.com/java-api-examples/
+https://www.codeproject.com/
+https://stackoverflow.com/
+https://ifeve.com/google-guava/
+https://www.javaworld.com/
+
 # Markdown基本语法
 [点击跳转至百度](http://www.baidu.com "title")
 ## 二级标题
