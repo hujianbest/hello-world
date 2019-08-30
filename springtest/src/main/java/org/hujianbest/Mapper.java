@@ -1,15 +1,11 @@
 package org.hujianbest;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
 /**
  * @author hujian
  */
-@Service
-public class Mapper {
-    public VO query(){
-        VO vo = new VO();
-        vo.setData(1);
-        return vo;
-    }
+@Repository
+public interface Mapper {
+    public VO query();
 }
