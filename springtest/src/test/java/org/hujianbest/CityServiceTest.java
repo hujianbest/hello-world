@@ -17,6 +17,11 @@ public class CityServiceTest {
     @Resource
     CityDao cityDao;
 
+
+    /**
+     * 主要是spring里面的mybatis配置得写对，然后使用spring-test和junit操作数据库
+     * 包含spring.xml的配置和数据库链接信息的配置
+     */
     @Test
     public void findCityByName() {
         Assert.assertEquals("武汉",cityDao.findByName("wuhan").getDescription());
